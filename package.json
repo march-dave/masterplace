@@ -4,9 +4,8 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "gulp",
-    "postinstall": "bower i && gulp build",
-    "clean": "rm -rf node_modules public/bower_components && npm i"
+    "start": "node app.js",
+    "postinstall": "bower i"
   },
   "keywords": [],
   "author": "",
