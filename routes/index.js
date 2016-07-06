@@ -1,12 +1,12 @@
 "use strict";
 
-var express = require("express");
-var router = express.Router();
-var path = require("path");
-var pathToIndex = path.join(__dirname, "../views/index.html");
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const pathToIndex = path.join(__dirname, "../views/index.html");
 
-router.get("/", function (request, response) {
-   response.sendFile(pathToIndex);
+router.get("/",  (req, res) => {
+   res.sendFile(pathToIndex);
 });
 
 module.exports = router;
