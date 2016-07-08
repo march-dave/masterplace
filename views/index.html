@@ -28,12 +28,13 @@
 <body ng-app='routerApp'>
 
   <h1></h1>
-  <div>
-    <button ui-sref='home'>Home</button>
+  <div class="container">
+    <button ui-sref='home' class="btn btn-success">Home</button>
     <!-- <button ui-sref='list'>List</button> -->
+    <ui-view></ui-view>
   </div>
 
-  <ui-view></ui-view>
+
 
 </body>
 </html>
