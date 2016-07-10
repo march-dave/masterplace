@@ -7,12 +7,14 @@ const request = require('request');
 router.get('/', (req, res) => {
 
   var options = { method: 'GET',
-    url: 'http://demo.ckan.org/api/action/datastore_search',
-    qs:
-     { resource_id: '8df68f1c-1c6f-4ba5-a0f2-a563b330f5d5',
-       limit: '10000000000' },
-    headers:
-     { datatype: 'jsonp' }
+    // url: 'http://demo.ckan.org/api/action/datastore_search',
+    // qs:
+    //  { resource_id: '8df68f1c-1c6f-4ba5-a0f2-a563b330f5d5',
+    //    limit: '10000000000' },
+    url: 'http://data.sfgov.org/resource/9v2m-8wqu.json'
+    // ,
+    // headers:
+    //  { datatype: 'jsonp' }
     };
 
     request(options, function (err, response, body) {
