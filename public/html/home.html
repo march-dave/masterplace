@@ -1,21 +1,27 @@
 <div class="home">
     <h1>Home</h1>
 
+    <div ng-app="main" ng-controller="mainCtrl">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" events="map.events">
+            <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id"></ui-gmap-marker>
+        </ui-gmap-google-map>
+    </div>
+
     <hr/>
     <!-- <form ng-submit="profileSettingUpdated()">
-        <fieldset class="form-group">
-            <label>Full Name</label>
-            <input type="text" class="form-control" ng-model="profileSetting.name" required disabled>
-        </fieldset>
-        <fieldset class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" ng-model="profileSetting.email" required disabled>
-        </fieldset>
-        <fieldset class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" class="form-control" placeholder="Your phone number" ng-model="profileSetting.phone" required>
-        </fieldset>
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form> -->
+    <fieldset class="form-group">
+    <label>Full Name</label>
+    <input type="text" class="form-control" ng-model="profileSetting.name" required disabled>
+</fieldset>
+<fieldset class="form-group">
+<label>Email</label>
+<input type="text" class="form-control" ng-model="profileSetting.email" required disabled>
+</fieldset>
+<fieldset class="form-group">
+<label>Phone Number</label>
+<input type="tel" class="form-control" placeholder="Your phone number" ng-model="profileSetting.phone" required>
+</fieldset>
+<button type="submit" class="btn btn-primary">Save</button>
+</form> -->
 
 </div>
