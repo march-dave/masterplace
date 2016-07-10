@@ -4,35 +4,30 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 
+const Yelp = require('yelp');
+
+const yelp = new Yelp({
+  consumer_key: process.env.consumer_key,
+  consumer_secret: process.env.consumer_secret,
+  token:  process.env.token,
+  token_secret:  process.env.token_secret,
+});
+
 router.get('/', (req, res) => {
 
-    // consumer_key=HrokgIsGel056g8x_jqGcQ
-    // consumer_secret=cd63Py4g72OIbavswLs9t4gAF00
-    // token=vwYUbnYMnWzmi0JaGTZjqK7PPsQkmzm3
-    // token_secret=XtvN4CYKibiq3rRNN41faNqSzJo
-
-
-    var options = { method: 'GET',
-      url: 'https://api.yelp.com/v2/search/',
-      qs: {
-            //  location: 'San Francisco, CA',
-            //  category_filter: 'guesthouses',
-            //  oauth_consumer_key: 'HrokgIsGel056g8x_jqGcQ',
-            //  oauth_token: 'vwYUbnYMnWzmi0JaGTZjqK7PPsQkmzm3',
-            //  oauth_signature_method: 'HMAC-SHA1',
-            //  oauth_timestamp: '1468175161',
-            //  oauth_nonce: 'FskZLA',
-            //  oauth_version: '1.0',
-            //  oauth_signature: 'I9Wt67nTAtDLZDtNz15NinX9up0%3D'
-     },
-     headers:
-       { 'cache-control': 'no-cache' },
-    };
-
-    request(options, (err, response, body) => {
-      if (err) return response.status(400).send(err);
-      res.send(body);
+    // See http://www.yelp.com/developers/documentation/v2/search_api
+    yelp.search({ term: 'guesthouses', location: 'San Francisco, CA' })
+    .then(function (data) {
+      res.send(data);
+    })
+    .catch(function (err) {
+      res.send(err);
     });
+
+    // request(options, (err, response, body) => {
+    //   if (err) return response.status(400).send(err);
+    //   res.send(body);
+    // });
 });
 
 module.exports = router;
