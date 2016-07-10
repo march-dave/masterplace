@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       url: 'https://zilyo.p.mashape.com/search',
       qs: { swlatitude: '18.55', swlongitude: '-160.52999999999997' },
       headers:
-       { provider: 'airbnb%2Chousetrip',
+       { provider: 'airbnb, housetrip',
          nelongitude: '154.48000000000002',
          nelatitude: '22.37',
          isinstantbook: 'true',
