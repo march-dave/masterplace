@@ -2,15 +2,33 @@
 
 var app = angular.module('masterplaceApp');
 
-app.controller('homeCtrl', function($scope) {
+app.controller('homeCtrl', function($scope, Yelp) {
 
-  console.log('homeCtrl');
+  var marker = {
+      id: Date.now(),
+      coords: {
+          latitude: lat,
+          longitude: lon
+      }
+  };
+
+Yelp.getGuestHouses().then( res => {
+
+    var lat = 0, long = 0;;
+    for(var i=0; i<res.businesses.length; i++) {
+      lat = res.businesses[i].location.coordinate.latitude;
+      long = res.businesses[i].location.coordinate.longitude;
+    }
+
+  })
+
+
 
   angular.extend($scope, {
         map: {
             center: {
-                latitude: 42.3349940452867,
-                longitude:-71.0353168884369
+                latitude: 37.7669830322266,
+                longitude: -122.432029724121
             },
             zoom: 11,
             markers: [],
@@ -26,7 +44,7 @@ app.controller('homeCtrl', function($scope) {
                     }
                 };
                 $scope.map.markers.push(marker);
-                console.log($scope.map.markers);
+                // console.log($scope.map.markers);
                 $scope.$apply();
             }
         }
