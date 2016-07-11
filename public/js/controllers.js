@@ -14,15 +14,8 @@ app.controller('homeCtrl', function($scope, Yelp, CrimeDate) {
             markers: [],
             events: {
             click: function (map, eventName, originalEventArgs) {
-                var e = originalEventArgs[0];
-                var lat = e.latLng.lat(),lon = e.latLng.lng();
-                // var marker = {
-                //     id: Date.now(),
-                //     coords: {
-                //         latitude: lat,
-                //         longitude: lon
-                //     }
-                // };
+              var e = originalEventArgs[0];
+              var lat = e.latLng.lat(),lon = e.latLng.lng();
 
               var marker = {
                   id: Date.now() + 10,
@@ -55,7 +48,7 @@ app.controller('homeCtrl', function($scope, Yelp, CrimeDate) {
                 console.log('CrimeDate', res);
 
                 var lati = 0, long = 0;
-                for(var i=0; i<res.length; i++) {
+                for(var i=0; i<20; i++) {
                   lati = res[i].y;
                   long = res[i].x;
 

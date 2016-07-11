@@ -16,7 +16,8 @@ const yelp = new Yelp({
 router.get('/', (req, res) => {
 
     // See http://www.yelp.com/developers/documentation/v2/search_api
-    yelp.search({ term: 'guesthouses', location: 'San Francisco, CA' })
+    yelp.search({ term: 'guesthouses', location: 'New York, NY' })
+    // yelp.search({ term: 'guesthouses', location: 'San Francisco, CA' })
     .then(function (data) {
       res.send(data);
     })
