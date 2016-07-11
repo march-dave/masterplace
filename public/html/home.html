@@ -1,4 +1,4 @@
-<section class="preference" style="margin: 10px">
+<section class="preference" style="margin: 10px; color: #d9534f">
 
 
       <!-- <h1>Home</h1> -->
@@ -13,8 +13,8 @@
       </div> -->
 
       <div style="padding: 10px;">
-          <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" events="map.events">
-              <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id"></ui-gmap-marker>
+          <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" events="map.events">
+              <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" options="m.options" events="marker.events" icon="m.icon" idkey="m.id"></ui-gmap-marker>
           </ui-gmap-google-map>
       </div>
 
