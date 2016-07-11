@@ -1,8 +1,15 @@
 'use strict';
 
-var app = angular.module('masterplaceApp', ['ui.router']);
+var app = angular.module('masterplaceApp', ['ui.router', 'uiGmapGoogleMapApiProvider']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
+
+  uiGmapGoogleMapApiProvider.configure({
+         key: 'AIzaSyDKaU__Y0bEzK_rSgx0tNk7RDCy_Y6s7mo',
+         v: '3',
+         libraries: 'weather,geometry,visualization'
+     });
+
 
   $stateProvider
     .state('home', {

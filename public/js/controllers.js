@@ -28,10 +28,13 @@ app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
 
               Yelp.getGuestHouses().then( res => {
 
-                  var lati = 0, long = 0;
+                $log.log('res', res);
+
+                  var lati = 0, long = 0, name = '';
                   for(var i=0; i<res.businesses.length; i++) {
                     lati = res.businesses[i].location.coordinate.latitude;
                     long = res.businesses[i].location.coordinate.longitude;
+                    name = res.businesses[i].name;
 
                     marker = {
                       id: Date.now() + 10,
@@ -42,14 +45,12 @@ app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
                       ,
                       options: {
                         draggable: false,
-                        labelContent: "lati, long",
+                        labelContent: "num: " + i,
                         labelAnchor: "0 55",
-                        labelClass: "marker-labels"
-                        // icon:"https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/image-128.png"
+                        labelClass: "marker-labels",
+                        icon:"https://cdn0.iconfinder.com/data/icons/my-house-1/512/013-myhouse-32.png"
                       }
                     }
-
-                    // $log.log('marker', marker);
 
                     $scope.map.markers.push(marker);
                   }
