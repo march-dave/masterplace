@@ -41,13 +41,12 @@ app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
                       coords: {
                           latitude: lati,
                           longitude: long
-                      }
-                      ,
+                      },
                       options: {
                         draggable: false,
-                        labelContent: "num: " + i,
-                        labelAnchor: "0 55",
-                        labelClass: "marker-labels",
+                        // labelContent: "num: " + i,
+                        // labelAnchor: "0 55",
+                        // labelClass: "marker-labels",
                         icon:"https://cdn0.iconfinder.com/data/icons/my-house-1/512/013-myhouse-32.png"
                       }
                     }
@@ -57,25 +56,32 @@ app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
               });
 
 
-              $scope.map.markers.push(marker);
+              // $scope.map.markers.push(marker);
 
-              // CrimeDate.getCrimeList().then( res => {
-              //
-              //   var lati = 0, long = 0;
-              //   for(var i=0; i<20; i++) {
-              //     lati = res[i].y;
-              //     long = res[i].x;
-              //
-              //     marker = {
-              //       id: Date.now() + 12,
-              //       coords: {
-              //           latitude: lati,
-              //           longitude: long
-              //       }
-              //     }
-              //     $scope.map.markers.push(marker);
-              //   }
-              // });
+              CrimeDate.getCrimeList().then( res => {
+
+                var lati = 0, long = 0;
+                for(var i=0; i<50; i++) {
+                  lati = res[i].y;
+                  long = res[i].x;
+
+                  marker = {
+                    id: Date.now() + 12,
+                    coords: {
+                        latitude: lati,
+                        longitude: long
+                    },
+                    options: {
+                      draggable: false,
+                      // labelContent: "num: " + i + 100,
+                      // labelAnchor: "0 55",
+                      // labelClass: "marker-labels",
+                      icon: "https://cdn4.iconfinder.com/data/icons/proglyphs-miscellaneous/512/Piracy-32.png"
+                    }
+                  }
+                  $scope.map.markers.push(marker);
+                }
+              });
 
                 // $scope.map.markers.push(marker);
                 $scope.$apply();
