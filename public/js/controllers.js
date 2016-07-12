@@ -10,15 +10,77 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
 
   angular.extend($scope, {
 
+        // marker = {
+        //   id: Date.now() + 10,
+        //   coords: {
+        //       latitude: lati,
+        //       longitude: long
+        //   },
+        //   options: {
+        //     draggable: false,
+        //     // labelContent: "num: " + i,
+        //     // labelAnchor: "0 55",
+        //     // labelClass: "marker-labels",
+        //     icon:"https://cdn0.iconfinder.com/data/icons/my-house-1/512/013-myhouse-32.png"
+        //   }
+        // }
+
+
         map: {
             center: {
                 latitude: 37.7669830322266,
                 longitude: -122.432029724121
             },
             zoom: 13,
-            markers: [],
+            markers: [
+
+              {
+               id: 21312321,
+               coords: {
+                   latitude: 37.7669830322266,
+                   longitude: -122.432029724121
+               },
+               options: {
+                 draggable: false,
+                 labelContent: "num: " + 1,
+                 labelAnchor: "0 55",
+                 labelClass: "marker-labels",
+                 icon:"https://cdn0.iconfinder.com/data/icons/my-house-1/512/013-myhouse-32.png"
+               }
+             }
+
+            ],
+
+
+
+
             events: {
+
+              // infoWindow: {
+              //   coords: {
+              //     latitude: 37.7669830322266,
+              //     longitude: -122.432029724121
+              //   },
+              //   options: {
+              //     disableAutoPan: false
+              //   },
+              //   show: false
+              // },
+              // infoWindowWithCustomClass: {
+              //   coords: {
+              //     latitude: 37.7669830322266,
+              //     longitude: -122.432029724121
+              //   },
+              //   options: {
+              //     boxClass: 'custom-info-window',
+              //     closeBoxDiv: '<div" class="pull-right" style="position: relative; cursor: pointer; margin: -20px -15px;">X</div>',
+              //     disableAutoPan: true
+              //   },
+              //   show: true
+              // },
+
             click: function (map, eventName, originalEventArgs) {
+
               // var e = originalEventArgs[0];
               // var lat = e.latLng.lat(),lon = e.latLng.lng();
 
@@ -55,7 +117,6 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
                         icon:"https://cdn0.iconfinder.com/data/icons/my-house-1/512/013-myhouse-32.png"
                       }
                     }
-
                     $scope.map.markers.push(marker);
                   }
               });
@@ -90,7 +151,7 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
 
                 $scope.$apply();
             }
-        }
+          }
         }
     });
 
