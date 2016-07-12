@@ -5,11 +5,10 @@ var app = angular.module('masterplaceApp', ['ui.router', 'uiGmapGoogleMapApiProv
 app.config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
 
   uiGmapGoogleMapApiProvider.configure({
-         key: 'AIzaSyDKaU__Y0bEzK_rSgx0tNk7RDCy_Y6s7mo',
-         v: '3',
-         libraries: 'weather,geometry,visualization'
-     });
-
+     key: 'AIzaSyDKaU__Y0bEzK_rSgx0tNk7RDCy_Y6s7mo',
+     v: '3.20',
+     libraries: 'weather,geometry,visualization'
+  });
 
   $stateProvider
     .state('home', {

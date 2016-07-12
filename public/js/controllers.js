@@ -2,9 +2,14 @@
 
 var app = angular.module('masterplaceApp');
 
-app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
+app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, CrimeDate) {
+
+  uiGmapGoogleMapApi.then(function(maps) {
+
+  });
 
   angular.extend($scope, {
+
         map: {
             center: {
                 latitude: 37.7669830322266,
@@ -28,7 +33,7 @@ app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
 
               Yelp.getGuestHouses().then( res => {
 
-                $log.log('res', res);
+                // $log.log('res', res);
 
                   var lati = 0, long = 0, name = '';
                   for(var i=0; i<res.businesses.length; i++) {
@@ -83,7 +88,6 @@ app.controller('homeCtrl', function($scope, $log, Yelp, CrimeDate) {
                 }
               });
 
-                // $scope.map.markers.push(marker);
                 $scope.$apply();
             }
         }
