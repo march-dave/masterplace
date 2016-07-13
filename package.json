@@ -4,8 +4,11 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./bin/www",
     "postinstall": "bower i"
+  },
+  "engines": {
+    "node": "5.10.1"
   },
   "keywords": [],
   "author": "",
