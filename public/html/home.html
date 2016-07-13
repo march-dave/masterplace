@@ -26,9 +26,11 @@
                 closeClick="map.window.closeClick()"
                 templateParameter="map.window">
                 <div>
-                    <!-- Single Window popped into mem as needed. -->
-                    <br>
-                   {{map.window.model.descript}}
+                   <div style="font-weight: bold;">{{map.window.model.descript}}</div>
+                   <br />
+                   <img class="preference" ng-src={{map.window.model.image_url}} />
+                   <br />
+                   {{map.window.model.rating}}
                 </div>
               </ui-gmap-window>
 
