@@ -8,6 +8,16 @@ body,html{height:100%}.mobileShow,[hidden],template{display:none}body,svg:not(:r
 
 .angular-google-map-container { height: 400px; }
 
+#map_canvas {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+#map_canvas {
+	position: relative;
+}
+
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
