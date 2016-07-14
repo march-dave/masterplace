@@ -20,11 +20,6 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
          $scope.map.window.model = model;
          $scope.map.window.show = true;
        }
-
-       ,mouseout: function() {
-         this.show = false;
-       }
-
      },
 
      window: {
@@ -33,10 +28,7 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
        show: false,
 
        closeClick: function() {
-         this.show = false;
-       },
-
-       mouseout: function() {
+         console.log('closeClick');
          this.show = false;
        },
 
