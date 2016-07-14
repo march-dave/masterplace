@@ -8,10 +8,21 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
   //
   // });
 
+  if (navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(function (position) {
+         var mysrclat = position.coords.latitude;
+         var mysrclong = position.coords.longitude;
+         console.log('mysrclat', mysrclat);
+         console.log('mysrclong', mysrclong);
+     });
+   }
+
   $scope.map = {
      center: {
       latitude: 37.769830322266,
       longitude: -122.432029724121
+      // latitude: mysrclat,
+      // longitude: mysrclong
      },
      zoom: 14,
      markers: [ ],
