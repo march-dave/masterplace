@@ -1,0 +1,30 @@
+var geoSuccessHandler = function (position) {
+  console.log('position: ', position);
+};
+
+var e = {}
+var geoErrorHandler = function (error, e) {
+  // console.log('error', error);
+  e = error;
+};
+
+console.log('e', e);
+
+var positionOptions = {
+  enableHighAccuracy: true,
+  timeout: 1000,
+  maximumAge: 500
+};
+
+navigator.geolocation.getCurrentPosition(geoSuccessHandler, geoErrorHandler, positionOptions);
+
+
+function somethingThatReturnsAPromise() {
+  var i = 0;
+  i++;
+}
+
+async function myFunction() {
+  let result = await somethingThatReturnsAPromise();
+  console.log(result); // cool, we have a result
+}
