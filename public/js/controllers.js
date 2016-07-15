@@ -8,40 +8,20 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
   //
   // });
 
-  var la = 0;
-  var lo = 0;
-
-  function success(position) {
-    // position.coords.latitude
-    // position.coords.longitude
-    return position;
-  }
-
-  if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(success);
-
-      //  navigator.geolocation.getCurrentPosition(function (position) {
-        // parent.latitude = position.coords.latitude;
-        // parent.longitude = position.coords.longitude;
-
-        // $scope.map.center.latitude = position.coords.latitude;
-        // $scope.map.center.longitude = position.coords.longitude;
-    //  });
-   }
-
-  //  console.log('la', la);
-  //  console.log('lo', lo);
-
-  //  var l = setText('lalalalala', la);
-  //  console.log('shandler', shandler);
+  // function success(position) {
+  //   console.log(position.coords.latitude);
+  //   console.log(position.coords.longitude);
+  // }
+  //
+  // if (navigator.geolocation) {
+  //      navigator.geolocation.getCurrentPosition(success);
+  //  }
 
   $scope.map = {
 
      center: {
         latitude: 37.769830322266,
         longitude: -122.432029724121
-      // latitude: parent.latitude,
-      // longitude: parent.longitude
      },
      zoom: 14,
      markers: [ ],
