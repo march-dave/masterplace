@@ -8,21 +8,39 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
   //
   // });
 
+var latitude = 0, longitude = 0;
+
+  function sucess(position) {
+
+    // (function() {
+    //   latitude = position.coords.latitude;
+    //   longitude = position.coords.longitude;
+    // })();
+
+  }
+
+  console.log('latitude1111111', latitude);
+  console.log('longitude222222', longitude);
+  // console.log('l1111111111111111111111111111111111111111');
+
   if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(function (position) {
-         var mysrclat = position.coords.latitude;
-         var mysrclong = position.coords.longitude;
-         console.log('mysrclat', mysrclat);
-         console.log('mysrclong', mysrclong);
-     });
+       navigator.geolocation.getCurrentPosition(sucess);
+      //  navigator.geolocation.getCurrentPosition(function (position) {
+        // parent.latitude = position.coords.latitude;
+        // parent.longitude = position.coords.longitude;
+
+        // $scope.map.center.latitude = position.coords.latitude;
+        // $scope.map.center.longitude = position.coords.longitude;
+    //  });
    }
 
   $scope.map = {
+
      center: {
-      latitude: 37.769830322266,
-      longitude: -122.432029724121
-      // latitude: mysrclat,
-      // longitude: mysrclong
+        latitude: 37.769830322266,
+        longitude: -122.432029724121
+      // latitude: parent.latitude,
+      // longitude: parent.longitude
      },
      zoom: 14,
      markers: [ ],
