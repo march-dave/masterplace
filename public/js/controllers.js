@@ -4,6 +4,12 @@ var app = angular.module('masterplaceApp');
 
 app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, CrimeDate) {
 
+  $scope.search = function() {
+
+    console.log('$scope.near', $scope.near);
+
+  }
+
   // uiGmapGoogleMapApi.then(function(maps) {
   //
   // });
@@ -80,9 +86,7 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
            }
 
            $log.log('marker', marker);
-
            $scope.map.markers.push(marker);
-
          }
      });
 
