@@ -6,21 +6,15 @@ const request = require('request');
 
 
 
-var options = { method: 'GET',
-  url: 'http://192.168.43.1:6624/osc/info',
-  headers: 
-   { 'postman-token': 'fe4819e9-1e13-254b-9080-21427e1d279c',
-     'cache-control': 'no-cache' } };
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
-
-
-
-
+// var options = { method: 'GET',
+//   url: 'http://192.168.43.1:6624/osc/info',
+//   headers:
+//    {
+//      'cache-control': 'no-cache' } };
+//
+// request(options, function (err, response, body) {
+//   (err) ? response.status(400).send(err) : response.send(body);
+// });
 
 router.get('/', (req, res) => {
 

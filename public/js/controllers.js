@@ -6,7 +6,6 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
 
   $scope.search = function() {
     console.log('$scope.near', $scope.near);
-
   }
 
   // uiGmapGoogleMapApi.then(function(maps) {
@@ -14,8 +13,8 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
   // });
 
   function success(position) {
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
+    // $scope.map.center.latitude = position.coords.latitude;
+    // $scope.map.center.longitude = position.coords.longitude;
   }
 
   if (navigator.geolocation) {
@@ -68,7 +67,6 @@ app.controller('homeCtrl', function($scope, uiGmapGoogleMapApi, $log, Yelp, Crim
            image_url = res.businesses[i].image_url;
 
           //  phone = res.businesses[i].display_phone;
-
           //  console.log('res.businesses[i]', res.businesses[i]);
 
            marker = {
