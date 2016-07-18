@@ -4,18 +4,6 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 
-
-
-// var options = { method: 'GET',
-//   url: 'http://192.168.43.1:6624/osc/info',
-//   headers:
-//    {
-//      'cache-control': 'no-cache' } };
-//
-// request(options, function (err, response, body) {
-//   (err) ? response.status(400).send(err) : response.send(body);
-// });
-
 router.get('/', (req, res) => {
 
   var options = { method: 'GET',
